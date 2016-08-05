@@ -1,0 +1,13 @@
+Package: okcupiddata
+Title: OkCupid Profile Data for Introductory Statistics and Data Science Courses
+Version: 0.0.0.9000
+Authors@R: person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre"))
+Description: Profile data (no essay data for the moment).
+Depends:
+    R (>= 3.3.0)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+URL: http://github.com/rudeboybert/okcupiddata
+BugReports: https://github.com/rudeboybert/okcupiddata/issues
+RoxygenNote: 5.0.1
