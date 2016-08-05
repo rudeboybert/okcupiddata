@@ -20,16 +20,19 @@ library(okcupiddata)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/okcupiddata)](http://cran.r-project.org/package=okcupiddata)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/okcupiddata)](http://www.r-pkg.org/pkg/okcupiddata)
 
-R package of OkCupid profile data from Albert Y. Kim, Adriana Escobedo-Land
-(2015). [OkCupid Profile Data for Introductory Statistics and Data Science 
-Courses](http://www.amstat.org/publications/jse/v23n2/kim.pdf). Journal of 
-Statistics Education, 23(2).
+R package of OkCupid profile data from [OkCupid Profile Data for Introductory 
+Statistics and Data Science 
+Courses](http://www.amstat.org/publications/jse/v23n2/kim.pdf): 59,946 OkCupid
+users who were living within 25 miles of San Francisco, had active profiles on
+June 26, 2012, were online in the previous year, and had at least one picture in
+their profile. 
 
 Note:
 
-* Due to size restrictions, all essay responses are omitted from the package.
-The complete data can be obtained
+* The original code, data, and codebook for the paper can be found
 [here](https://github.com/rudeboybert/JSE_OkCupid).
+* Due to file size restrictions, all essay responses are omitted from the
+package.
 * Permission to use this data set was explicitly granted by OkCupid.
 * Usernames are not included.
 
@@ -58,12 +61,8 @@ To see a list of all data sets, type:
 data(package = "okcupiddata")
 ```
 
-To load a particular data set, type:
-
-```{r, eval = FALSE}
-# Cleaned profile data
-data(profiles)
-# Raw profile data
-data(profiles_raw)
-```
+* `profiles` consists of a cleaned-up version of the non-essay response data
+more appropriate for use by novices.
+* `profiles_raw` consists of the raw version of the non-essay response data 
+as presented in the original paper.
 

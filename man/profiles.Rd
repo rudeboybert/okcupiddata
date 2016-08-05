@@ -3,41 +3,33 @@
 \docType{data}
 \name{profiles}
 \alias{profiles}
-\title{Profile data}
-\format{A data frame with 59946 rows and 22 variables:
-\describe{
-  \item{ID}{Anonymized ID number of user. Used to join with essay data}
-  \item{age}{age}
-  \item{body_type}{body type}
-  \item{diet}{diet}
-  \item{drinks}{drinks}
-  \item{drugs}{drugs}
-  \item{education}{drinks}
-  \item{ethnicity}{drinks}
-  \item{height}{drinks}
-  \item{income}{drinks}
-  \item{job}{drinks}
-  \item{last_online}{drinks}
-  \item{location}{drinks}
-  \item{offspring}{drinks}
-  \item{orientation}{drinks}
-  \item{pets}{drinks}
-  \item{religion}{drinks}
-  \item{sex}{drinks}
-  \item{sign}{drinks}
-  \item{smokes}{drinks}
-  \item{speaks}{drinks}
-  \item{status}{drinks}
-}}
+\title{(Cleaned) OkCupid profile data}
+\format{A tibble (\code{tbl_df} class data frame in \link[dplyr]{dplyr} style) with 59946 rows and 22 variables:}
 \source{
-\url{http://www.diamondse.info/}
+\url{https://github.com/rudeboybert/JSE_OkCupid}
 }
 \usage{
 profiles
 }
 \description{
-A dataset containing the prices and other attributes of almost 54,000
-diamonds.
+Cleaned version of \code{\link{profiles_raw}} meant for novices. Differences
+between \code{profiles} and \code{profiles_raw} are described in Details.
+}
+\details{
+Differences between cleaned and raw version of profiles data.
+\describe{
+\item{Missing \code{income} values}{Previously stored as \code{-1} is now stored as \code{NA}'s}
+\item{All other missing values}{Previously stored as \code{""} is now stored as \code{NA}'s}
+\item{\code{offspring} and \code{sign}}{String instances \code{"?&rsquo;"} are replaced with apostrophes.}
+\item{\code{last_online}}{Converted to USA/Pacific timezone POSIXct date-time objects using \link[lubridate]{parse_date_time}}
+}
+}
+\examples{
+library(okcupiddata)
+data(profiles)
+# If using RStudio:
+# View(profiles)
+summary(profiles$income)
 }
 \keyword{datasets}
 

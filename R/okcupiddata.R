@@ -1,6 +1,10 @@
 #' okcupiddata:
 #'
-#' Profile data from .
+#' Cleaned profile data of 59,946 OkCupid users who were living within 25 miles of San
+#' Francisco, had active profiles on June 26, 2012, were online in the previous
+#' year, and had at least one picture in their profile. Essay response data were
+#' not included, but can be found in original data for paper
+#' \url{https://github.com/rudeboybert/JSE_OkCupid}.
 #'
 #' @section Data sets:
 #' Type \code{data(package="okcupiddata")} to view all datasets.
@@ -9,7 +13,7 @@
 #' @examples
 #' library(okcupiddata)
 #' data(profiles)
-#' data(profilesdata)
+#' data(profiles_raw)
 #' @name okcupiddata
 #' @references Albert Y. Kim, Adriana Escobedo-Land (2015). OkCupid Profile Data for
 #' Introductory Statistics and Data Science Courses. Journal of Statistics
