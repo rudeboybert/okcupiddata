@@ -1,0 +1,18 @@
+citHeader("To cite this data in publications use:")
+
+citEntry(entry = "Article",
+  title        = "OkCupid Profile Data for Introductory Statistics and Data Science Courses",
+  author       = personList(as.person("Albert Y. Kim"),
+                   as.person("Adriana Escobedo-Land")),
+  journal      = "Journal of Statistics Education",
+  year         = "2015",
+  volume       = "23",
+  number       = "2",
+  url          = "http://www.amstat.org/publications/jse/v23n2/kim.pdf",
+
+  textVersion  =
+  paste("Albert Y. Kim, Adriana Escobedo-Land (2015).",
+        "OkCupid Profile Data for Introductory Statistics and Data Science Courses.",
+        "Journal of Statistics Education, 23(2).",
+        "URL http://www.amstat.org/publications/jse/v23n2/kim.pdf.")
+)
