@@ -1,0 +1,50 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+
+# resampledata
+
+[![Build Status](https://travis-ci.org/rudeboybert/okcupiddata.png?branch=master)](https://travis-ci.org/rudeboybert/okcupiddata)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/okcupiddata)](http://cran.r-project.org/package=okcupiddata)
+
+
+## Installation
+
+Get the released version from CRAN:
+
+```{r, eval = FALSE}
+install.packages("okcupiddata")
+```
+
+Or the development version from GitHub:
+
+```{r, eval = FALSE}
+# If you haven't installed devtools yet, do so:
+# install.packages("devtools")
+devtools::install_github("rudeboybert/okcupiddata")
+```
+
+## Data Sets
+
+To see a list of all data sets, type:
+
+```{r, eval = FALSE}
+data(package = "okcupiddata")
+```
+
+To load a particular data set, `profiles` for example, type:
+
+```{r, eval = FALSE}
+data(profiles)
+```

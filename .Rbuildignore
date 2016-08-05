@@ -4,3 +4,5 @@
 ^data-raw$
 ^profiles\.csv$
 ^\.travis\.yml$
+^README\.Rmd$
+^README-.*\.png$
