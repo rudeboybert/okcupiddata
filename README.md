@@ -17,9 +17,9 @@ The profile data in this package are a modified version of the original data, su
 
 Note:
 
--   The original data, publication, code, and codebook can be found [here](https://github.com/rudeboybert/JSE_OkCupid)
--   Usernames are not included
--   Permission to use this data set was explicitly granted by OkCupid
+-   The original data, publication, code, and codebook can be found [here](https://github.com/rudeboybert/JSE_OkCupid).
+-   Usernames are not included.
+-   Permission to use this data set was explicitly granted by OkCupid.
 
 Installation
 ------------
@@ -38,7 +38,7 @@ Or the development version from GitHub:
 devtools::install_github("rudeboybert/okcupiddata")
 ```
 
-Data Sets
+Load Data
 ---------
 
 To load the profile data, run:
