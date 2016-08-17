@@ -27,7 +27,7 @@
   \item{smokes}{Smoking habits}
   \item{speaks}{Languages spoken}
   \item{status}{Relationship status}
-  \item{essay0}{Response to first essay question (My self summary), trimmed to 140 characters}
+  \item{essay0}{Response to first essay question (my self summary), trimmed to 140 characters}
 }}
 \source{
 \url{https://github.com/rudeboybert/JSE_OkCupid}
@@ -36,22 +36,24 @@
 profiles
 }
 \description{
-Cleaned profile data of 59,946 OkCupid users who were living within 25 miles
-of San Francisco, had active profiles on June 26, 2012, were online in the
-previous year, and had at least one picture in their profile. Original data
-and codebook can be found at \url{https://github.com/rudeboybert/JSE_OkCupid}.
+Cleaned profile data 59,946 OkCupid users who were living within 25 miles of
+San Francisco, had active profiles on June 26, 2012, were online in the
+previous year, and had at least one picture in their profile. The original
+data and codebook can be found at \url{https://github.com/rudeboybert/JSE_OkCupid}.
 }
 \details{
-The differences between the cleaned profile data and the original data are
-listed in the Details section below.
-
-Differences between cleaned and raw version of profiles data:
+The differences between the cleaned and original version of profiles data are:
 \describe{
-\item{Missing \code{income} values}{Previously stored as \code{-1} are now stored as \code{NA}'s}
-\item{All other missing values}{Previously stored as \code{""} are now stored as \code{NA}'s}
-\item{\code{offspring} and \code{sign}}{String instances \code{"?&rsquo;"} are replaced with apostrophes}
-\item{\code{last_online}}{Converted to USA/Pacific timezone POSIXct date-time objects using \link[lubridate]{parse_date_time}}
-\item{Essay Responses}{Due to file size restrictions, only the first 140 characters of each user's first essay response (My Self Summary) is included}
+\item{Essay Responses}{Due to file size restrictions, only the first 140
+characters of each user's first essay response (my self summary) is included}
+\item{Missing \code{income} values}{Previously coded as \code{-1}, they are now
+coded as \code{NA}}
+\item{All other missing values}{Previously coded as \code{""}, they are now coded
+as \code{NA}}
+\item{\code{offspring} and \code{sign}}{String instances of \code{"?&rsquo;"} are
+replaced with apostrophes}
+\item{\code{last_online}}{Date/time strings are converted to \code{USA/Pacific} timezone
+POSIXct date-time objects using \link[lubridate]{parse_date_time}}
 }
 }
 \examples{

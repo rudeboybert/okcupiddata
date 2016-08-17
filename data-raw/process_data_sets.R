@@ -3,7 +3,7 @@ library(readr)
 library(stringr)
 library(lubridate)
 
-# Load CSV file from GitHub repo for paper.
+# Load CSV file from GitHub repo for JSE paper.
 if(!file.exists("profiles.csv")){
   url <- "https://github.com/rudeboybert/JSE_OkCupid/blob/master/profiles.csv.zip?raw=true"
   temp_file <- tempfile()
