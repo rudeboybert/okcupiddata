@@ -27,7 +27,7 @@ Statistics Education 2015): 59,946 OkCupid users who were living within 25 miles
 of San Francisco, had active profiles on June 26, 2012, were online in the 
 previous year, and had at least one picture in their profile.
 
-The profile data in this package is a modified version of the original data,
+The profile data in this package are a modified version of the original data,
 suitable for use by novices:
 
 * **Essay responses**: Due to file size restrictions, only the first 140 characters

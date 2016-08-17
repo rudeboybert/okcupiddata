@@ -7,7 +7,7 @@ okcupiddata
 
 R package of cleaned profile data from [OkCupid Profile Data for Introductory Statistics and Data Science Courses](http://www.amstat.org/publications/jse/v23n2/kim.pdf) (Journal of Statistics Education 2015): 59,946 OkCupid users who were living within 25 miles of San Francisco, had active profiles on June 26, 2012, were online in the previous year, and had at least one picture in their profile.
 
-The profile data in this package is a modified version of the original data, suitable for use by novices:
+The profile data in this package are a modified version of the original data, suitable for use by novices:
 
 -   **Essay responses**: Due to file size restrictions, only the first 140 characters of each user's first essay response (`essay0`: my self summary) are included
 -   **Missing `income` values**: Previously coded as `-1`, they are now coded as `NA`
