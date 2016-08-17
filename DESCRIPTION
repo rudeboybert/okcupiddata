@@ -5,11 +5,13 @@ Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre")),
     person("Adriana", "Escobedo-Land", email = "land.escbd@gmail.com", role = "aut")
     )
-Description: Profile data of from "OkCupid Profile Data for Introductory Statistics and Data Science Courses" in Journal of Statistics Education. Due to file size restrictions, essay question responses were not included.
+Description: Cleaned profile data from "OkCupid Profile Data for Introductory
+    Statistics and Data Science Courses" (Journal of Statistics Education 2015)
+    suitable for use by novices.
 Depends: R (>= 2.10)
 License: CC0
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE
 URL: http://github.com/rudeboybert/okcupiddata
 BugReports: https://github.com/rudeboybert/okcupiddata/issues
 RoxygenNote: 5.0.1

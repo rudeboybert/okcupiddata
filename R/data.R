@@ -1,36 +1,23 @@
-#' (Cleaned) OkCupid profile data
+#' Cleaned OkCupid profile data
 #'
-#' Cleaned version of \code{\link{profiles_raw}} meant for novices. Differences
-#' between \code{profiles} and \code{profiles_raw} are described in Details.
+#' Cleaned profile data of 59,946 OkCupid users who were living within 25 miles
+#' of San Francisco, had active profiles on June 26, 2012, were online in the
+#' previous year, and had at least one picture in their profile. Original data
+#' and codebook can be found at \url{https://github.com/rudeboybert/JSE_OkCupid}.
 #'
-#' @details Differences between cleaned and raw version of profiles data.
+#' The differences between the cleaned profile data and the original data are
+#' listed in the Details section below.
+#'
+#' @details Differences between cleaned and raw version of profiles data:
 #' \describe{
-#' \item{Missing \code{income} values}{Previously stored as \code{-1} is now stored as \code{NA}'s}
-#' \item{All other missing values}{Previously stored as \code{""} is now stored as \code{NA}'s}
-#' \item{\code{offspring} and \code{sign}}{String instances \code{"?&rsquo;"} are replaced with apostrophes.}
+#' \item{Missing \code{income} values}{Previously stored as \code{-1} are now stored as \code{NA}'s}
+#' \item{All other missing values}{Previously stored as \code{""} are now stored as \code{NA}'s}
+#' \item{\code{offspring} and \code{sign}}{String instances \code{"?&rsquo;"} are replaced with apostrophes}
 #' \item{\code{last_online}}{Converted to USA/Pacific timezone POSIXct date-time objects using \link[lubridate]{parse_date_time}}
+#' \item{Essay Responses}{Due to file size restrictions, only the first 140 characters of each user's first essay response (My Self Summary) is included}
 #' }
-#' @format A tibble (\code{tbl_df} class data frame in \link[dplyr]{dplyr} style) with 59946 rows and 22 variables:
-#' @source \url{https://github.com/rudeboybert/JSE_OkCupid}
-#' @examples
-#' library(okcupiddata)
-#' data(profiles)
-#' # If using RStudio:
-#' # View(profiles)
-#' summary(profiles$income)
-"profiles"
-
-#' (Cleaned) OkCupid profile data
-#'
-#' Raw profile data of 59,946 OkCupid users who were living within 25 miles of San
-#' Francisco, had active profiles on June 26, 2012, were online in the previous
-#' year, and had at least one picture in their profile. Essay response data were
-#' not included. Full codebook can be found
-#' at \url{https://github.com/rudeboybert/JSE_OkCupid}
-#'
-#' @format A tibble (\code{tbl_df} class data frame in \link[dplyr]{dplyr} style) with 59946 rows and 22 variables:
+#' @format A \code{data.frame} with 59946 rows and 22 variables:
 #' \describe{
-#'   \item{ID}{Anonymized ID number of user. Used to join with essay data}
 #'   \item{age}{Age}
 #'   \item{body_type}{Body type}
 #'   \item{diet}{Dietary habits}
@@ -52,12 +39,13 @@
 #'   \item{smokes}{Smoking habits}
 #'   \item{speaks}{Languages spoken}
 #'   \item{status}{Relationship status}
+#'   \item{essay0}{Response to first essay question (My self summary), trimmed to 140 characters}
 #' }
 #' @source \url{https://github.com/rudeboybert/JSE_OkCupid}
 #' @examples
 #' library(okcupiddata)
-#' data(profiles_raw)
+#' data(profiles)
 #' # If using RStudio:
-#' # View(profiles_raw)
-#' summary(profiles_raw$income)
-"profiles_raw"
+#' # View(profiles)
+#' summary(profiles$income)
+"profiles"

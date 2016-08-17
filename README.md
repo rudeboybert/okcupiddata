@@ -9,8 +9,7 @@ R package of OkCupid profile data from [OkCupid Profile Data for Introductory St
 
 Note:
 
--   The original code and data for the paper can be found [here](https://github.com/rudeboybert/JSE_OkCupid).
--   Due to file size restrictions, all essay responses are omitted from the package.
+-   The code, data, and codebook for the original Journal of Statistics Education (JSE) paper can be found [here](https://github.com/rudeboybert/JSE_OkCupid).
 -   Permission to use this data set was explicitly granted by OkCupid.
 -   Usernames are not included.
 
@@ -34,11 +33,20 @@ devtools::install_github("rudeboybert/okcupiddata")
 Data Sets
 ---------
 
-To see a list of all data sets, type:
+To load the data, run:
 
 ``` r
-data(package = "okcupiddata")
+data("profiles")
 ```
 
--   `profiles` consists of a cleaned-up version of the non-essay response data more appropriate for use by novices.
--   `profiles_raw` consists of the raw version of the non-essay response data as presented in the original paper.
+If you prefer having the raw and uncleaned profile data along with the complete essay data (as seen in the above mentioned JSE paper), then you do not need this package; simply run the following code:
+
+``` r
+# You only need to run the following once:
+url <- "https://github.com/rudeboybert/JSE_OkCupid/blob/master/profiles.csv.zip?raw=true"
+temp_zip_file <- tempfile()
+download.file(url, temp_zip_file)
+unzip(temp_zip_file, "profiles.csv")
+# Run this to load CSV into R:
+profiles <- read.csv(file="profiles.csv", header=TRUE, stringsAsFactors = FALSE)
+```

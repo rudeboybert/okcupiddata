@@ -6,14 +6,10 @@
 #' not included, but can be found in original data for paper
 #' \url{https://github.com/rudeboybert/JSE_OkCupid}.
 #'
-#' @section Data sets:
-#' Type \code{data(package="okcupiddata")} to view all datasets.
-#'
 #' @docType package
 #' @examples
 #' library(okcupiddata)
 #' data(profiles)
-#' data(profiles_raw)
 #' @name okcupiddata
 #' @references Albert Y. Kim, Adriana Escobedo-Land (2015). OkCupid Profile Data for
 #' Introductory Statistics and Data Science Courses. Journal of Statistics

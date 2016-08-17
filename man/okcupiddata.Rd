@@ -12,14 +12,9 @@ year, and had at least one picture in their profile. Essay response data were
 not included, but can be found in original data for paper
 \url{https://github.com/rudeboybert/JSE_OkCupid}.
 }
-\section{Data sets}{
-
-Type \code{data(package="okcupiddata")} to view all datasets.
-}
 \examples{
 library(okcupiddata)
 data(profiles)
-data(profiles_raw)
 }
 \references{
 Albert Y. Kim, Adriana Escobedo-Land (2015). OkCupid Profile Data for
