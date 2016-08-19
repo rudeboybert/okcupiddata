@@ -1,3 +1,9 @@
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* Added a URL to the reference mentioned in the DESCRIPTION.
+
 ## Test environments
 
 * local OS X install, R 3.3.1
@@ -10,4 +16,4 @@ There were no ERRORs or WARNINGs.
 
 ## Comments
 
-* None
+* There is no DOI for the reference mentioned in the DESCRIPTION file.
