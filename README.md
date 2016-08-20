@@ -7,7 +7,7 @@ okcupiddata
 
 R package of cleaned profile data from [OkCupid Profile Data for Introductory Statistics and Data Science Courses](http://www.amstat.org/publications/jse/v23n2/kim.pdf) (Journal of Statistics Education 2015): 59,946 OkCupid users who were living within 25 miles of San Francisco, had active profiles on June 26, 2012, were online in the previous year, and had at least one picture in their profile.
 
-The profile data in this package are a modified version of the original data, suitable for use by novices:
+The data in this package are a "cleaned" version of the original data from the above paper, in that the following variables are modified for easier use by novices:
 
 -   **Essay responses**: Due to file size restrictions, only the first 140 characters of each user's first essay response (`essay0`: my self summary) are included
 -   **Missing `income` values**: Previously coded as `-1`, they are now coded as `NA`
@@ -15,11 +15,11 @@ The profile data in this package are a modified version of the original data, su
 -   **`offspring` and `sign`**: String instances of `"?&rsquo;"` are replaced with apostrophes
 -   **`last_online`**: Date/time strings are converted to `USA/Pacific` timezone POSIXct date-time objects
 
-Note:
+**Note**:
 
 -   The original data, publication, code, and codebook can be found [here](https://github.com/rudeboybert/JSE_OkCupid).
--   Usernames are not included.
--   Permission to use this data set was explicitly granted by OkCupid.
+-   The original data, and hence also this cleaned data, did not include usernames.
+-   Permission to use this data was explicitly granted by OkCupid.
 
 Installation
 ------------
@@ -47,7 +47,7 @@ To load the profile data, run:
 data(profiles)
 ```
 
-If you prefer having the original uncleaned profile data along with the complete essay data, then do not use this package; simply run the following code:
+If you prefer having the originally published [Journal of Statistics Education](http://www.amstat.org/publications/jse/v23n2/kim.pdf) data, which also include the complete essay responses, then do not use this package; simply run the following code:
 
 ``` r
 # Download the data (run only once):
