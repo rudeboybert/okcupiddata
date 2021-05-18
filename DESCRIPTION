@@ -1,6 +1,6 @@
 Package: okcupiddata
 Title: OkCupid Profile Data for Introductory Statistics and Data Science Courses
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: c(
     person("Albert Y.", "Kim", email = "albert.ys.kim@gmail.com", role = c("aut", "cre")),
     person("Adriana", "Escobedo-Land", email = "land.escbd@gmail.com", role = "aut")
