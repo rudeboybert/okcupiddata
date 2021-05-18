@@ -14,6 +14,6 @@
 #' @name okcupiddata
 #' @references Albert Y. Kim, Adriana Escobedo-Land (2015). OkCupid Profile Data for
 #' Introductory Statistics and Data Science Courses. Journal of Statistics
-#' Education, 23(2). \url{http://www.amstat.org/publications/jse/v23n2/kim.pdf}.
+#' Education, 23(2). \url{https://doi.org/10.1080/10691898.2015.11889737}.
 NULL
 #> NULL

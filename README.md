@@ -7,13 +7,13 @@
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/okcupiddata)](http://www.r-pkg.org/pkg/okcupiddata)
 
-R package of cleaned profile data from [OkCupid Profile Data for
-Introductory Statistics and Data Science
+R package of cleaned profile data **revised in 2021** from [OkCupid
+Profile Data for Introductory Statistics and Data Science
 Courses](http://www.amstat.org/publications/jse/v23n2/kim.pdf) (Journal
-of Statistics Education 2015): 59,946 OkCupid users who were living
-within 25 miles of San Francisco, had active profiles during a period in
-the 2010s, were online in the previous year, and had at least one
-picture in their profile.
+of Statistics Education 2015, revised in 2021): 59,946 OkCupid users who
+were living within 25 miles of San Francisco, had active profiles during
+a period in the 2010s, were online in the previous year, and had at
+least one picture in their profile.
 
 The data in this package are a “cleaned” version of the original data
 from the above paper, in that the following variables are modified for

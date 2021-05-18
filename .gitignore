@@ -1,4 +1,6 @@
 .Rproj.user
 .Rhistory
 .RData
-profiles.csv
+.DS_Store
+profiles_revised.csv
+essays_revised_and_shuffled.csv
