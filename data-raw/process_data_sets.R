@@ -2,14 +2,8 @@ library(dplyr)
 library(readr)
 library(stringr)
 library(lubridate)
-
-# Load CSV file from GitHub repo for JSE paper.
-if(!file.exists("profiles.csv")){
-  url <- "https://github.com/rudeboybert/JSE_OkCupid/blob/master/profiles.csv.zip?raw=true"
-  temp_file <- tempfile()
-  download.file(url, temp_file, mode="wb")
-  unzip(temp_file, "profiles.csv")
-}
+library(here)
+library(fs)
 
 # Function to clean essay data
 clean_html <- function(string){
@@ -33,23 +27,51 @@ clean_html <- function(string){
   return(string)
 }
 
-# Cleaned Profiles --------------------------------------------------------
-profiles <- read.csv(file="profiles.csv", header = TRUE, stringsAsFactors = FALSE) %>%
-  # Remove all but first essay response and reorder
-  select(-(essay1:essay9)) %>%
-  select(age:education, ethnicity:status, essay0) %>%
-  # Clean missing values
-  mutate_each(funs(replace(., . == "", NA))) %>%
-  # Clean other values and convert last_online variable to POXIXct object
+
+
+# Cleaned Profiles -----------------------------------------------------
+# Load CSV file from GitHub repo for JSE paper.
+if(!file.exists("profiles_revised.csv")){
+  url <- "https://github.com/rudeboybert/JSE_OkCupid/blob/master/profiles_revised.csv.zip?raw=true"
+  temp_file <- tempfile()
+  download.file(url, temp_file, mode="wb")
+  unzip(temp_file, "profiles_revised.csv")
+  file_move("profiles_revised.csv", "data-raw/profiles_revised.csv")
+}
+
+profiles_revised <-
+  here("data-raw/profiles_revised.csv") %>%
+  read_csv() %>%
+  # # Clean missing values
+  mutate(across(everything(), ~replace(., . == "", NA))) %>%
+  # Clean other values
   mutate(
     income = ifelse(income == -1, NA, income),
     offspring = str_replace_all(offspring, "&rsquo;", "'"),
-    sign = str_replace_all(sign, "&rsquo;", "'"),
-    last_online = parse_date_time(last_online, "Y-m-d-h-m", tz="US/Pacific")
-  ) %>%
-  # Clean remaining essay question and trim to 140 characters
+    sign = str_replace_all(sign, "&rsquo;", "'")
+  )
+usethis::use_data(profiles_revised, overwrite = TRUE, compress = "bzip2")
+
+
+
+# Cleaned Shuffled Essays ----------------------------------------------
+# Load CSV file from GitHub repo for JSE paper.
+if(!file.exists("essays_revised_and_shuffled.csv")){
+  url <- "https://github.com/rudeboybert/JSE_OkCupid/blob/master/essays_revised_and_shuffled.csv.zip?raw=true"
+  temp_file <- tempfile()
+  download.file(url, temp_file, mode="wb")
+  unzip(temp_file, "essays_revised_and_shuffled.csv")
+  file_move("essays_revised_and_shuffled.csv", "data-raw/essays_revised_and_shuffled.csv")
+}
+
+essay0_revised_and_shuffled <-
+  here("data-raw/essays_revised_and_shuffled.csv") %>%
+  read_csv() %>%
+  select(essay0) %>%
   mutate(
     essay0 = clean_html(essay0),
     essay0 = str_sub(essay0, 1, 140)
   )
-devtools::use_data(profiles, overwrite = TRUE, compress = "bzip2")
+usethis::use_data(essay0_revised_and_shuffled, overwrite = TRUE, compress = "bzip2")
+
+

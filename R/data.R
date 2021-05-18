@@ -1,9 +1,10 @@
 #' Cleaned OkCupid profile data
 #'
-#' Cleaned profile data 59,946 OkCupid users who were living within 25 miles of
-#' San Francisco, had active profiles during a period in the 2010s, were online in the
-#' previous year, and had at least one picture in their profile. The original
-#' data and codebook can be found at \url{https://github.com/rudeboybert/JSE_OkCupid}.
+#' Cleaned profile data of 59,946 OkCupid users who were living within 25
+#' miles of San Francisco, had active profiles during a period in the
+#' 2010s, and had at least one picture in their profile. The original
+#' data and codebook can be found at
+#' \url{https://github.com/rudeboybert/JSE_OkCupid}.
 #'
 #' @details The differences between the cleaned and original version of profiles data are:
 #' \describe{
@@ -15,8 +16,6 @@
 #' as \code{NA}}
 #' \item{\code{offspring} and \code{sign}}{String instances of \code{"?&rsquo;"} are
 #' replaced with apostrophes}
-#' \item{\code{last_online}}{Date/time strings are converted to \code{USA/Pacific} timezone
-#' POSIXct date-time objects using \link[lubridate]{parse_date_time}}
 #' }
 #' @format A \code{data.frame} with 59946 rows and 22 variables:
 #' \describe{
@@ -27,11 +26,9 @@
 #'   \item{drugs}{Drug usage habits}
 #'   \item{education}{Education level}
 #'   \item{ethnicity}{Ethnicity}
-#'   \item{height}{Height in inches}
+#'   \item{height}{Height in inches with random noise added (random uniform from {-1, 0, 1})}
 #'   \item{income}{Income}
 #'   \item{job}{Job}
-#'   \item{last_online}{Date/time of last login to OkCupid}
-#'   \item{location}{Location}
 #'   \item{offspring}{Number of offspring}
 #'   \item{orientation}{Sexual orientation}
 #'   \item{pets}{Number of pets}
@@ -41,13 +38,35 @@
 #'   \item{smokes}{Smoking habits}
 #'   \item{speaks}{Languages spoken}
 #'   \item{status}{Relationship status}
-#'   \item{essay0}{Response to first essay question (my self summary), trimmed to 140 characters}
 #' }
 #' @source \url{https://github.com/rudeboybert/JSE_OkCupid}
 #' @examples
-#' library(okcupiddata)
-#' data(profiles)
+#' library(tibble)
+#' profiles_revised
+#'
 #' # If using RStudio:
 #' # View(profiles)
-#' summary(profiles$income)
-"profiles"
+"profiles_revised"
+
+
+#' Cleaned (shuffled) OkCupid essay data
+#'
+#' Cleaned randomly row-shuffled essay data of 59,946 OkCupid users. To
+#' unpair essays from users, the rows of the essay data were randomly
+#' scrambled. Furthermore, due to R package size restrictions, only the
+#' first 140 characters of each user's first essay response (my self
+#' summary) is included. The original data and codebook can be found at
+#' \url{https://github.com/rudeboybert/JSE_OkCupid}.
+#'
+#' @format A \code{data.frame} with 59946 rows and 1 variable:
+#' \describe{
+#'   \item{essay0}{First 140 characters of first essay response (my self summary)}
+#' }
+#' @source \url{https://github.com/rudeboybert/JSE_OkCupid}
+#' @examples
+#' library(tibble)
+#' essay0_revised_and_shuffled
+#'
+#' # If using RStudio:
+#' # View(essay0_revised_and_shuffled)
+"essay0_revised_and_shuffled"
