@@ -4,7 +4,8 @@
 \name{profiles}
 \alias{profiles}
 \title{Cleaned OkCupid profile data}
-\format{A \code{data.frame} with 59946 rows and 22 variables:
+\format{
+A \code{data.frame} with 59946 rows and 22 variables:
 \describe{
   \item{age}{Age}
   \item{body_type}{Body type}
@@ -28,7 +29,8 @@
   \item{speaks}{Languages spoken}
   \item{status}{Relationship status}
   \item{essay0}{Response to first essay question (my self summary), trimmed to 140 characters}
-}}
+}
+}
 \source{
 \url{https://github.com/rudeboybert/JSE_OkCupid}
 }
@@ -37,7 +39,7 @@ profiles
 }
 \description{
 Cleaned profile data 59,946 OkCupid users who were living within 25 miles of
-San Francisco, had active profiles on June 26, 2012, were online in the
+San Francisco, had active profiles during a period in the 2010s, were online in the
 previous year, and had at least one picture in their profile. The original
 data and codebook can be found at \url{https://github.com/rudeboybert/JSE_OkCupid}.
 }
@@ -64,4 +66,3 @@ data(profiles)
 summary(profiles$income)
 }
 \keyword{datasets}
-
